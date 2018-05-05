@@ -1,0 +1,36 @@
+.options {
+    position: absolute;
+    height: 300px;
+    top: 100vh;
+    transition: top 1s;
+
+    background: white;
+    border: #283747 3px solid;
+    text-align: center;
+
+    h1 {
+        margin: 20px 0 15px 0;
+    }
+
+    .preset {
+        cursor: pointer;
+        margin-bottom: 10px;
+        user-select: none;
+        
+        &:hover {
+            color: #3a7bd5;
+        }
+    }
+}
+
+@media screen and (orientation:landscape) {
+    .options {
+        width: 40vw;
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .options {
+        width: 90vw;
+    }
+}

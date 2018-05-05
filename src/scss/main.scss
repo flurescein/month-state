@@ -1,0 +1,19 @@
+@import 'chart';
+@import 'controller';
+@import 'buttons';
+@import 'options';
+
+$back-color: #283747;
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100vh;
+    margin: 0;
+    background: $back-color;
+    font-family: sans-serif;
+    overflow: hidden;
+}

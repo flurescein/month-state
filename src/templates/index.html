@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0">
+    <title>
+        <%= htmlWebpackPlugin.options.title %>
+    </title>
+    <link rel="shortcut icon" href="./icons/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="chart">
+        <div m-for="value, index in stats" 
+             style="height: {{value / maxValue() * 100}}%;" 
+             class="bar"
+             id="bar-{{index}}"
+             m-on:mouseover="highlightWeekAndDate(index, highlightColor, maxHighlightColor, minHighlightColor, dateHighlightColor)"
+             m-on:mouseout="repaintAllBarsAndDates(barColor, '')">
+        </div>
+    </div>
+    <div class="controllers">
+        <div m-for="value, index in stats" class="controller">
+            <div class="date" id="date-{{index}}">{{indexToDate(index)}}</div>
+            <input type="number"
+                   m-model="stats[index]" 
+                   m-on:focus="repaintBar(index, highlightColor)"
+                   m-on:blur="repaintBar(index, barColor)">
+        </div>
+    </div>
+    <div class="randomize-button" m-on:click="randomazeValues">
+        <img src="./icons/refresh.svg" alt="Randomize values">
+    </div>
+    <div class="options-button" m-on:click="invertOptionsState">
+        <img src="./icons/dots.svg" alt="More options">
+    </div>
+    <div class="options" id="options">
+        <h1>Дата</h1>
+        <input type="date" id="datepicker" m-on:change="updateDate">
+        <h1>Пресеты</h1>
+        <div class="preset"
+              m-for="preset in presets"
+              m-on:click="setPreset(preset.date, preset.values)">
+            {{preset.text}}
+        </div>
+        <div class="close-button" m-on:click="invertOptionsState">
+            <img src="./icons/cross.svg" alt="Close">
+        </div>
+    </div>
+</body>
+
+</html>

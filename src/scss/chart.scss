@@ -1,0 +1,31 @@
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    padding-top: 5vh;
+
+    width: 100vw;
+    height: calc(100vh - 160px);
+
+    background: white;
+    
+    .bar {
+        margin: 0 5px;
+        width: 100%;
+        transition: height 1s;
+        background: linear-gradient(to bottom, #00d2ff, #3a7bd5);
+    }
+}
+
+@media screen and (orientation:portrait) {
+    .chart .bar {
+        margin: 0;
+    }
+}
+
+@media screen and (orientation:landscape) {
+    .chart .bar {
+        margin: 0 5px;
+    }
+}

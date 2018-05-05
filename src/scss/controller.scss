@@ -1,0 +1,51 @@
+.controllers {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    overflow: auto;
+    overflow-y: hidden;
+    background: #EEEEEE;
+
+    .controller {
+        &:nth-child(even) {
+            background: white;
+        }
+
+        &:nth-child(odd) {
+            input {
+                background: #EEEEEE;
+            }
+        }
+
+        .date, input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            height: 50px;
+            width: 50px;
+        }
+
+        .date {
+            font-weight: 700;
+            cursor: default;
+        }
+
+        input {
+            border: none;
+        }
+
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none;
+            margin: 0; 
+        }
+
+        input[type='number'] {
+            -moz-appearance:textfield;
+        }
+
+        appearance: none;
+    }
+}
