@@ -1,8 +1,16 @@
-# month-state
-Захотелось сделать что-то необычное, а заодно попробовать библиотеку Moon.
+# Month State
 
-Графики реактивные и перестраиваются при изменении данных или даты. Данные, к которым привязан столбец, при наведении на него подсвечиваются в таблице снизу. 
+Written for an introductory test for the JetBrains internship.
 
-Минимальное значение за неделю выделяется красным, максимальное — зеленым.
+## Build
 
-Посмотреть результат можно [тут](https://flurescein.github.io/month-state/).
+``` bash
+# Install dependencies
+npm install
+
+# Serve with hot reload at localhost:8080
+npm run dev
+
+# Build for production with minification
+npm run build
+```
